@@ -21,6 +21,19 @@ local plugins = {
         end,
     },
 
+    {
+        -- Detect tabstop and shiftwidth automatically
+        "tpope/vim-sleuth",
+    },
+
+    {
+        -- "gc" to comment visual regions/lines
+        "numToStr/Comment.nvim", opts = {},
+    },
+
+    -- Highlight todo, notes, etc in comments
+    { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
+
     -- nvim-treesitter
     {
         "nvim-treesitter/nvim-treesitter",
@@ -101,7 +114,91 @@ local plugins = {
                     component_separators = { left = '\\', right = '/'},
                     section_separators = { left = '', right = ''},
                 },
+                extensions = { "nvim-tree", },
             })
+        end,
+    },
+
+    {
+        "nvim-tree/nvim-tree.lua",
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+        config = function()
+            local options = {
+                filters = {
+                    dotfiles = true,
+                },
+                disable_netrw = true,
+                hijack_netrw = true,
+                hijack_cursor = true,
+                hijack_unnamed_buffer_when_opening = false,
+                sync_root_with_cwd = true,
+                update_focused_file = {
+                    enable = true,
+                    update_root = false,
+                },
+                view = {
+                    adaptive_size = false,
+                    side = "left",
+                    width = 30,
+                    preserve_window_proportions = true,
+                },
+                git = {
+                    enable = true,
+                    ignore = true,
+                },
+                filesystem_watchers = {
+                    enable = true,
+                },
+                actions = {
+                    open_file = {
+                        resize_window = true,
+                    },
+                },
+                renderer = {
+                    root_folder_label = false,
+                    highlight_git = true,
+                    highlight_opened_files = "none",
+
+                    indent_markers = {
+                        enable = true,
+                    },
+
+                    icons = {
+                        show = {
+                            file = true,
+                            folder = true,
+                            folder_arrow = true,
+                            git = true,
+                        },
+
+                        glyphs = {
+                            default = "󰈚",
+                            symlink = "",
+                            folder = {
+                                default = "",
+                                empty = "",
+                                empty_open = "",
+                                open = "",
+                                symlink = "",
+                                symlink_open = "",
+                                arrow_open = "",
+                                arrow_closed = "",
+                            },
+                            git = {
+                                unstaged = "✗",
+                                staged = "✓",
+                                unmerged = "",
+                                renamed = "➜",
+                                untracked = "★",
+                                deleted = "",
+                                ignored = "◌",
+                            },
+                        },
+                    },
+                },
+            }
+            require("nvim-tree").setup(options)
+            vim.keymap.set("n", "<C-n>", ":NvimTreeToggle<CR>", { desc = "Open File Tree" })
         end,
     },
 
@@ -110,3 +207,5 @@ local plugins = {
 local opts = {}
 
 require("lazy").setup(plugins, opts)
+
+-- vim: ts=2 sts=2 sw=2 et
