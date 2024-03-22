@@ -110,7 +110,7 @@ local plugins = {
         config = function()
             require("lualine").setup({
                 options = { 
-                    theme = "auto",
+                    theme = "base16",
                     component_separators = { left = '\\', right = '/'},
                     section_separators = { left = '', right = ''},
                 },
