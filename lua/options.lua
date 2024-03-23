@@ -1,54 +1,63 @@
--- Disable netrw in favor of nvim-tree
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
+local o = vim.opt
 
--- Enable line numbers by default
-vim.opt.number = true
-
--- Set line numbers relative to cursor
-vim.opt.relativenumber = true
-
--- Set default split behavior
-vim.opt.splitbelow = true
-vim.opt.splitright = true
-
--- Disable word wrapping
-vim.opt.wrap = false
-
--- Expand tabs to spaces upon saving
-vim.opt.expandtab = true
-
--- Set tabstop to 4 by default
-vim.opt.tabstop = 4
-
--- Set shift width to 4 (how many tabs to indent)
-vim.opt.shiftwidth = 4
-
--- Sync neovim and system clipboards
-vim.opt.clipboard = "unnamedplus"
-
--- Set how many lines should be at the sge of the screen before starting to scroll
-vim.opt.scrolloff = 10
-
--- Enable cursor line highlight
-vim.opt.cursorline = true
-
--- Enable mouse support
-vim.opt.mouse = 'a'
-
--- Enable virtual edit in block mode
-vim.opt.virtualedit = "block"
-
--- preview changes in a split window
-vim.opt.inccommand = "split"
-
--- ignore case sensitive completions
-vim.opt.ignorecase = true
-
--- Enable gui colors in terminal
-vim.opt.termguicolors = true
-
--- Set highlight on search
-vim.opt.hlsearch = true
-
-
+o.number         = true -- enable line number
+o.relativenumber = true -- enable relative line number
+o.undofile       = true -- persistent undo
+o.backup         = false -- disable backup
+o.cursorline     = true -- enable cursor line
+o.expandtab      = true -- use spaces instead of tabs
+o.autowrite      = true -- auto write buffer when it's not focused
+o.hidden         = true -- keep hidden buffers
+o.hlsearch       = true -- highlight matching search
+o.ignorecase     = true -- case insensitive on search..
+o.smartcase      = true -- ..unless there's a capital
+o.equalalways    = true -- make window size always equal
+o.lazyredraw     = true -- make macro faster
+o.list           = true -- display listchars
+o.showmode       = false -- don't show mode
+o.autoindent     = true -- enable autoindent
+o.smartindent    = true -- smarter indentation
+o.smarttab       = true -- make tab behaviour smarter
+o.splitbelow     = true -- split below instead of above
+o.splitright     = true -- split right instead of left
+o.splitkeep      = "screen" -- stabilize split
+o.startofline    = false -- don't go to the start of the line when moving to another file
+o.swapfile       = false -- disable swapfile
+o.termguicolors  = true -- true colours for better experience
+o.wrap           = false -- don't wrap lines
+o.writebackup    = false -- disable backup
+o.swapfile       = false -- disable swap
+o.backupcopy     = "yes" -- fix weirdness for stuff that replaces the entire file when hot reloading
+o.completeopt    = {
+  "menu",
+  "menuone",
+  "noselect",
+  "noinsert",
+} -- better completion
+o.encoding       = "UTF-8" -- set encoding
+o.fillchars      = {
+  vert = "│",
+  eob = " ",
+  fold = " ",
+  diff = " ",
+} -- make vertical split sign better
+o.inccommand     = "split" -- incrementally show result of command
+o.listchars      = {
+  eol = "↲",
+  tab = "» ",
+} -- set listchars
+o.mouse          = "nvi" -- enable mouse support in normal, insert, and visual mode
+o.shortmess      = "csa" -- disable some stuff on shortmess
+o.signcolumn     = "yes" -- enable sign column all the time 4 column
+o.laststatus     = 3 -- always enable statusline
+o.pumheight      = 10 -- limit completion items
+o.re             = 0 -- set regexp engine to auto
+o.scrolloff      = 2 -- make scrolling better
+o.sidescroll     = 2 -- make scrolling better
+o.shiftwidth     = 2 -- set indentation width
+o.sidescrolloff  = 15 -- make scrolling better
+o.tabstop        = 2 -- tabsize
+o.timeoutlen     = 400 -- faster timeout wait time
+o.updatetime     = 1000 -- set faster update time
+o.joinspaces     = false
+o.diffopt:append { "algorithm:histogram", "indent-heuristic" }
