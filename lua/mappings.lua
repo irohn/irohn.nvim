@@ -64,16 +64,16 @@ nnoremap("<C-j>", "<C-w><C-j>", { desc = "Go to the bottom window" })
 nnoremap("<C-k>", "<C-w><C-k>", { desc = "Go to the top window" })
 
 -- Resize buffer easier
-nnoremap("<Left>", ":vertical resize +2<CR>", {
+nnoremap("<A-Left>", ":vertical resize +2<CR>", {
   desc = "Resize buffer to the left",
 })
-nnoremap("<Right>", ":vertical resize -2<CR>", {
+nnoremap("<A-Right>", ":vertical resize -2<CR>", {
   desc = "Resize buffer to the right",
 })
-nnoremap("<Up>", ":resize +2<CR>", {
+nnoremap("<A-Up>", ":resize +2<CR>", {
   desc = "Resize buffer to the top",
 })
-nnoremap("<Down>", ":resize -2<CR>", {
+nnoremap("<A-Down>", ":resize -2<CR>", {
   desc = "Resize buffer to the bottom",
 })
 
