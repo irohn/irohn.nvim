@@ -1,11 +1,9 @@
-local selection = "rose-pine"
-
 return {
   {
-    "rose-pine/neovim",
-    name = "rose-pine",
+    "rebelot/kanagawa.nvim",
+    name = "kanagawa",
     config = function ()
-      vim.cmd("colorscheme " .. selection)
+      vim.cmd("colorscheme kanagawa-dragon")
     end
   },
 }
