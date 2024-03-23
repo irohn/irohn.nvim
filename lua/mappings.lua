@@ -80,6 +80,7 @@ nnoremap("<Down>", ":resize -2<CR>", {
 -- Buffer movements
 noremap("<A-h>", "<CMD>bp<CR>", { desc = "Go to previous buffer" })
 noremap("<A-l>", "<CMD>bn<CR>", { desc = "Go to next buffer" })
+noremap("<A-x>", "<CMD>bd<CR>", { desc = "Delete current buffer" })
 
 vnoremap("<", "<gv", { desc = "Dedent current selection" })
 vnoremap(">", ">gv", { desc = "Indent current selection" })
