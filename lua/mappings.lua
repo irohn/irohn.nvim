@@ -35,16 +35,16 @@ tnoremap("<C-j>", "<C-\\><C-n><C-w><C-j>", {
 tnoremap("<C-k>", "<C-\\><C-n><C-w><C-k>", {
   desc = "Move to the top of the terminal",
 })
-tnoremap("<Left>", "<C-\\><C-n>:vertical resize +2<CR>", {
+tnoremap("<A-Left>", "<C-\\><C-n>:vertical resize +2<CR>", {
   desc = "Resize terminal window to the left (+2)",
 })
-tnoremap("<Right>", "<C-\\><C-n>:vertical resize -2<CR>", {
+tnoremap("<A-Right>", "<C-\\><C-n>:vertical resize -2<CR>", {
   desc = "Resize terminal window to the right (-2)",
 })
-tnoremap("<Up>", "<C-\\><C-n>:resize +2<CR>", {
+tnoremap("<A-Up>", "<C-\\><C-n>:resize +2<CR>", {
   desc = "Resize terminal window to the top (+2)",
 })
-tnoremap("<Down>", "<C-\\><C-n>:resize -2<CR>", {
+tnoremap("<A-Down>", "<C-\\><C-n>:resize -2<CR>", {
   desc = "Resize terminal window to the bottom (-2)",
 })
 tnoremap("<A-h", "<C-\\><C-n>:bp<CR>", {
