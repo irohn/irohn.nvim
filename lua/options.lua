@@ -52,6 +52,7 @@ o.signcolumn     = "yes" -- enable sign column all the time 4 column
 o.laststatus     = 3 -- always enable statusline
 o.pumheight      = 10 -- limit completion items
 o.re             = 0 -- set regexp engine to auto
+o.clipboard      = "unnamedplus"
 o.scrolloff      = 2 -- make scrolling better
 o.sidescroll     = 2 -- make scrolling better
 o.shiftwidth     = 2 -- set indentation width
